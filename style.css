@@ -1,0 +1,920 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* font-family: 'Exo 2', sans-serif; */
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    /* background-color: white; */
+    /* color: rgb(40, 40, 40) */
+    /* color: rgb(28, 72, 245); */
+    /* color: rgba(248, 249, 250, 0.1); */
+    /* overflow-x: hidden; Hide horizontal scrollbar */
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@font-face {
+    font-family: daredevil;
+    src: url(fonts/Daredevil.ttf);
+}
+
+/* .page-sections{
+    transition: box-shadow 0.3s ease;
+}
+
+.page-sections:hover{
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+} */
+
+
+
+/* ======================================= SECTION-1 NAVIGATION BAR ======================================= */
+
+
+
+.navbar {
+    position: fixed;
+    width: 100vw;
+
+    /* position: sticky;
+    top: 0px; */
+
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    box-shadow: 0 0 30px rgba(202, 113, 234, 0.224);
+    /* border-bottom: 1px solid black; */
+    background-color: rgba(248, 249, 250, 0.1);
+    backdrop-filter: blur(3px);
+}
+
+
+/* =========================== site logo =========================== */
+
+
+.site-logo {
+    width: fit-content;
+    font-family: 'Exo 2', sans-serif;
+    margin-left: 10rem;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(40, 40, 40);
+    cursor: pointer;
+}
+
+/* .site-logo:hover{
+    transform: scale(1.1);
+} */
+
+.site-logo>#R {
+    color: rgb(40, 40, 40);
+    transition: color 0.3s;
+    font-family: daredevil;
+}
+
+.site-logo:hover>#R {
+    color: rgb(166, 130, 211);
+}
+
+.site-logo>#K {
+    transition: color 0.3s;
+    color: rgb(166, 130, 211);
+    font-family: daredevil;
+}
+
+.site-logo:hover>#K {
+    color: rgb(40, 40, 40);
+}
+
+
+
+/* =========================== navigation menus =========================== */
+
+
+.nav-menus {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-right: 10rem;
+}
+
+.nav-menus div {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    margin: 1px;
+    transition: transform 0.3s;
+
+    cursor: pointer;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.nav-menus div:hover a {
+    color: rgb(166, 130, 211);
+}
+
+.nav-menus div:hover {
+    transform: scale(1.1);
+    color: rgb(166, 130, 211);
+}
+
+.nav-menus div a {
+    color: black;
+
+    color: rgb(40, 40, 40);
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s;
+}
+
+
+/* ======================================= SECTION-2 MAIN ======================================= */
+
+
+
+
+.main {
+
+    height: 100vh;
+    width: 100vw;
+    /* background-color: antiquewhite; */
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+
+    gap: 5rem;
+    padding: 100px;
+    /* padding-bottom: 0; */
+
+}
+
+
+
+/* =========================== main left =========================== */
+
+
+
+.main-left {
+
+    /* background-color: white; */
+    width: 600px;
+    height: 450px;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    gap: 20px;
+
+    /* border: 1px solid rgb(0, 0, 0, 0.1); */
+    /* border-radius: 50px; */
+    /* box-shadow: 0 0 100px rgb(0, 0, 0, 0.1); */
+
+    position: relative;
+
+    animation: shadow 3s ease-in-out infinite alternate;
+}
+
+/* @keyframes shadow {
+    from{
+        box-shadow: 0 0 0;
+    }
+
+    to{
+        box-shadow: 5px 5px 100px rgb(0, 0, 0, 0.1), -5px -5px 100px rgb(0, 0, 0, 0.1);
+    }
+} */
+
+.grad {
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+    background-image: linear-gradient(to top right, rgb(220, 179, 231), rgb(32, 19, 140));
+
+    position: absolute;
+    top: 60px;
+    right: 90px;
+    z-index: -1;
+
+    animation: growshrink 3s ease-in-out infinite alternate;
+}
+
+@keyframes growshrink {
+
+    from {
+        transform: rotate(0) scale(0.5);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+
+}
+
+.main-heading {
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.main-subheading {
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+.role {
+    font-family: 'Poppins', sans-serif;
+    /* color: rgb(51, 98, 246); */
+    /* color: rgb(40, 72, 236); */
+    color: rgb(166, 130, 211);
+    font-weight: 600;
+}
+
+.main-description {
+    /* margin-top: 1rem; */
+    width: 90%;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+.button {
+    margin-top: 10px;
+    height: 40px;
+    width: 120px;
+    /* background-color: #e84949; */
+    /* background-color: rgb(28, 72, 245); */
+    background-color: rgb(166, 130, 211);
+
+    border-radius: 100px;
+    font-size: 15px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    cursor: pointer;
+
+    box-shadow: inset 0 0 0 0 black;
+    transition: box-shadow ease 0.5s;
+}
+
+.button:hover {
+    box-shadow: inset 120px 0 10px 0 rgb(83, 83, 83), 2px 2px 15px rgba(183, 183, 183, 0.3), -2px -2px 15px rgba(207, 207, 207, 0.3);
+}
+
+
+
+/* =========================== main right =========================== */
+
+
+
+.main-right {
+    /* background-color: aliceblue; */
+
+    width: 600px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prabhjot {
+    position: absolute;
+}
+
+.prabhjot img {
+    border: 3px solid rgba(251, 251, 251, 0.628);
+    border-radius: 100%;
+    width: 500px;
+
+    animation: raviscale 3s ease-in-out infinite alternate;
+}
+
+@keyframes raviscale {
+    from {
+        transform: scale(1);
+        filter: grayscale(0.5);
+    }
+
+    to {
+        transform: scale(1.1);
+        filter: grayscale(0);
+    }
+}
+
+
+
+.rotator {
+    position: absolute;
+}
+
+.rotator img {
+    width: 550px;
+
+    animation: rotate 9s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        /* scale: 0.95; */
+        transform: rotate(0deg);
+    }
+
+    to {
+        /* scale: 1.05; */
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.popbox1 {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+
+    width: 130px;
+    height: 60px;
+    background-color: white;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 0 rgba(28, 72, 245, 0.2), 0 0 30px rgb(0, 0, 0, 0.1);
+
+    animation: pop1 3s ease-in-out infinite alternate;
+    transition: box-shadow 0.5s;
+}
+
+.popbox1:hover {
+    animation-play-state: paused;
+    box-shadow: inset 0 0 0 0 rgba(28, 72, 245, 0.2), 0 0 30px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+@keyframes pop1 {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+
+
+
+.popbox2 {
+    position: absolute;
+    bottom: 90px;
+    left: 190px;
+     padding:10px;
+    background-color: white;
+    width: 150px;
+    height: 60px;
+    font-weight: 400;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 0 rgba(28, 72, 245, 0.2), 0 0 30px rgb(0, 0, 0, 0.1);
+
+    animation: pop2 3s ease-in-out infinite alternate;
+    transition: box-shadow 0.5s;
+}
+
+.popbox2:hover {
+    animation-play-state: paused;
+    box-shadow: inset 0 0 0 0 rgba(28, 72, 245, 0.2), 0 0 30px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+@keyframes pop2 {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+
+
+.popbox3 {
+    position: absolute;
+    top: 220px;
+    right: -20px;
+
+    background-color: white;
+    width: 150px;
+    height: 35px;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: lightsteelblue;
+
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 rgba(28, 72, 245, 0.2), 0 0 30px rgb(0, 0, 0, 0.1);
+}
+
+.popbox3 input {
+    width: 110px;
+    border: none;
+    height: 25px;
+    padding-left: 5px;
+}
+
+.popbox3 input::placeholder {
+    color: lightsteelblue;
+}
+
+.popbox3 i {
+    cursor: pointer;
+}
+
+
+/* =========================== faded text =========================== */
+
+
+
+.faded-text {
+    user-select: none;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    /* color: rgb(51, 98, 246); */
+    color: rgb(248, 249, 250);
+
+    /* transition: all 3s; */
+
+    /* align-content: ; */
+
+    position: absolute;
+    bottom: -31px;
+    left: 100px;
+
+}
+
+
+
+
+/* ======================================= SECTION-3 ABOUT ======================================= */
+
+
+
+
+.aboutme {
+    background-color: rgba(249, 241, 252, 0.588);
+    height: 100vh;
+    width: 100vw;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme-heading {
+    color: rgb(166, 130, 211);
+    font-family: 'Exo 2', sans-serif;
+    ;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.aboutme-container {
+    text-align: justify;
+    width: 800px;
+}
+
+
+
+
+/* ======================================= SECTION-4 SKILLS ======================================= */
+
+
+
+
+.skills {
+    position: relative;
+    /* background-color: aliceblue ; */
+    height: 1000px;
+    width: 100vw;
+
+    padding-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-heading {
+    color: rgb(166, 130, 211);
+    font-family: 'Exo 2', sans-serif;
+    ;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.skills-container {
+
+    background-color: rgba(166, 130, 211, 0.221);
+
+    /* border: 1px solid black; */
+    border-radius: 50px;
+
+    padding: 50px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4rem;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s;
+}
+
+.skills-container:hover {
+    box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.03);
+}
+
+.skill-box {
+    background-color: white;
+    height: 170px;
+    width: 130px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: rem; */
+
+    cursor: pointer;
+
+    /* border: 1px solid black; */
+    border-radius: 30px;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.skill-box:hover {
+    transform: scale(1.1);
+    /* box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.skill-name {
+    font-family: 'Poppins', sans-serif;
+    /* font-weight: bold; */
+    position: absolute;
+    bottom: 10px;
+}
+
+
+
+/* ======================================= SECTION-4 Project======================================= */
+
+
+
+
+.project {
+    position: relative;
+    
+    height: 400px;
+    width: 100vw;
+    margin-top: 50px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-heading {
+    color: rgb(166, 130, 211);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.project-container {
+
+    background-color: rgba(166, 130, 211, 0.221);
+
+    border-radius: 50px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: 200px .5fr;
+    /* grid-template-rows: repeat(1, 1fr); */
+    gap: 4rem;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s;
+}
+
+.project-container:hover {
+    box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.03);
+}
+
+.project-box {
+    background-color: white;
+    height: 170px;
+    width: 200px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: rem; */
+
+    cursor: pointer;
+
+    border-radius: 30px;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.project-box:hover {
+    transform: scale(1.1);
+    /* box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.project-name {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    bottom: 10px;
+}
+
+
+
+
+
+/* ======================================= SECTION-5 CONTACT ======================================= */
+
+
+
+
+.contactme {
+    position: relative;
+    /* background-color: aliceblue; */
+    background-color: rgba(249, 241, 252, 0.588);
+    width: 100vw;
+    height: 900px;
+    margin-top: 100px;
+    padding-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+
+    width: 800px;
+    /* height: 600px; */
+
+    padding: 30px;
+    border-radius: 50px;
+    /* background-color: aqua; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.contact-heading {
+    color: rgb(166, 130, 211);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.contact-subheading {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.contact-inputs {
+    width: 700px;
+    height: 50px;
+
+    padding-left: 20px;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.contact-inputs::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.contact-inputs:hover {
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.message-area {
+    padding: 20px;
+    height: 250px;
+}
+
+.send-button {
+    margin-left: 50px;
+}
+
+
+
+/* ======================================= SECTION-HEADINGS ======================================= */
+
+
+
+.reveal {
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.reveal:hover {
+    color: rgb(121, 121, 121);
+}
+
+
+
+
+
+
+/* ======================================= RESPONSIVE DESIGN ======================================= */
+
+
+
+
+
+@media (max-width: 1000px) {
+    .navbar {
+        flex-direction: column;
+        height: 100px;
+        justify-content: center;
+    }
+
+    .site-logo {
+        margin-left: 0;
+    }
+
+    .nav-menus {
+        margin-right: 0;
+    }
+
+    .main {
+        height: 200vh;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .aboutme {
+        height: 125vh;
+    }
+
+    .aboutme-container {
+        width: 650px;
+    }
+}
+
+@media (max-width: 750px) {
+    .aboutme {
+        height: 150vh
+    }
+
+    .aboutme-container {
+        width: 500px;
+    }
+
+    .skills {
+        height: 1500px;
+    }
+    .project {
+        height: 1500px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    .project-container {
+        grid-template-columns: 500px;
+        grid-template-rows: 200px 100px;
+    }
+
+    .contact-inputs {
+        width: 600px;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .contact-inputs {
+        width: 500px;
+    }
+}
+
+@media (max-width: 550px) {
+    .contact-subheading {
+        width: 400px;
+    }
+
+    .contact-inputs {
+        width: 400px;
+    }
+}
+
+
+
+/* ======================================= FOOTER ======================================= */
+
+
+.footer {
+    background-color: rgb(250, 230, 255);
+    color: #868686;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+}
